@@ -1,0 +1,171 @@
+---
+title: "Piero Palacios Bernuy CV"
+author: Piero Palacios Bernuy
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+output:
+  pagedown::html_resume:
+    css: [ 'dd_cv.css', 'custom.css','resume']
+    self_contained: true
+#knit: pagedown::chrome_print      
+---
+
+```{r metathis, echo=FALSE}
+library(metathis)
+meta() %>%
+  meta_name("github-repo" = "pipaber/resume") %>% 
+  meta_social(
+    title = "Piero Palacios Bernuy CV",
+    description = paste(
+      "CV made with the packages RMarkdown, pagedown, datadrivencv."
+    ),
+    url = "https://beatrizmilz.github.io/resume/index.html",
+    image = "https://beatrizmilz.github.io/resume/img/share-card.png",
+    image_alt = paste(
+      "Beatriz Milz CV"
+    ),
+    og_type = "website",
+    og_author = "Piero Palacios Bernuy",
+    twitter_card_type = "summary_large_image",
+    twitter_creator = "@beamilz"
+  )
+```
+
+<!-- inicio academic icons -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"> <!-- final academic icons -->
+
+<!-- inicio font awesome -->
+
+```{=html}
+<script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+```
+<!-- final font awesome -->
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis',
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/15kB1Sj6ZN0YBLmc_O3E5iEEMVsBrkFwMnbZD85EZPQo/edit?usp=sharing",  
+  pdf_mode = params$pdf_mode
+)
+
+
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+
+
+
+```
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+# Aside
+
+<center>![Piero Palacios](img/piero.jpg){width=80% style='border-radius: 50%;'}</center>
+
+
+### CONTACT
+
+<center>
+
+<a href='https://bioinformatics-blog.netlify.app/' target='_blank'><i class="fa fa-home"></i></a> <a href='https://github.com/pipaber' target='_blank'><i class="fa fa-github"></i></a> <a href='mailto:p.palacios.bernuy@gmail.com'><i class="fa fa-envelope"></i></a> <a href='https://www.linkedin.com/in/pieropalaciosbernuy/' target='_blank'><i class="fa fa-linkedin"></i></a>
+
+</center>
+
+<br>
+
+Hi! My name is Piero, and I am a Biotechnologist from Peru 🇵🇪 🦙.
+
+I have especializations in data analysis and bioinformatics from Harvard University and MIT.
+
+I have a [blog](https://bioinformatics-blog.netlify.app/) about bioinformatics aimed at people who are enthusiastic about this field.
+
+
+### TEACHING
+
+<i class="fas fa-chalkboard-teacher"></i> `Rstudio and Bioconductor`
+
+<br>
+
+### Languages
+
+**Spanish:** Native
+
+**English:** Intermediate
+<br>
+
+## Disclaimer {#disclaimer}
+
+This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown) and [**datadrivencv**](http://nickstrayer.me/datadrivencv/index.html).
+
+Code available on <i class="fa fa-github"></i> [GitHub](https://github.com/pipaber/resume).
+
+Last updated on `r Sys.Date()`. The most recent version of this resume is [available here](https://github.com/pipaber/resume/index.pdf).
+
+# Main
+
+## Piero Palacios Bernuy {#title}
+
+## Professional Experience {data-icon="chalkboard-teacher"}
+
+```{r}
+CV %<>% print_section('professional_experience')
+```
+
+## Education {data-icon="chalkboard-teacher"}
+
+```{r}
+CV %<>% print_section('education')
+```
+
+\pagebreak
+
+::: aside
+Selected activities:
+
+### PROGRAMMING SKILLS
+
+<i class="fab fa-r-project"></i> `R`
+
+<i class="fa fa-area-chart" aria-hidden="true"></i> `tidyverse`
+
+<i class="fab fa-markdown"></i> `RMarkdown / Quarto`
+
+<i class="fab fa-github"></i> `GitHub`
+
+<i class="fa fa-dna"></i> `Bioconductor`
+
+<i class="fas fa-desktop"></i> `HPC`
+
+<i class="fab fa-python"></i> `Python`
+
+<i class="fa fa-linux"></i> `Linux`
+
+:::
+
+## Courses {data-icon="book"}
+
+```{r}
+CV %<>% print_section('courses')
+```
+
