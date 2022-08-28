@@ -84,7 +84,7 @@ if(params$pdf_mode) {
 <center>![Piero Palacios](img/piero.jpg){width=80% style='border-radius: 50%;'}</center>
 
 
-### CONTACT
+### CONTACT 
 
 <center>
 
@@ -107,7 +107,7 @@ I have a [blog](https://bioinformatics-blog.netlify.app/) about bioinformatics a
 
 <br>
 
-### Languages
+### LANGUAGES
 
 **Spanish:** Native
 
@@ -121,6 +121,7 @@ This resume was made with the R package [**pagedown**](https://github.com/rstudi
 Code available on <i class="fa fa-github"></i> [GitHub](https://github.com/pipaber/resume).
 
 Last updated on `r Sys.Date()`. The most recent version of this resume is [available here](https://github.com/pipaber/resume/blob/main/docs/index.pdf).
+
 
 # Main
 
