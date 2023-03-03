@@ -1,6 +1,11 @@
 ---
 layout: default
-remote_theme: benbalter/retlab
+remote_theme: pages-themes/leap-day@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+title: Test
+description: A test
+show_downloads: true
 ---
 <h1>{{ page.title }}</h1>
 <p>{{ page.date | date_to_string }} - {{ page.author }}</p>
