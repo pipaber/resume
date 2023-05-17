@@ -12,7 +12,7 @@ output:
 #knit: pagedown::chrome_print      
 ---
 
-```{r metathis, echo=FALSE}
+```{r metathis, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(metathis)
 meta() %>%
   meta_name("github-repo" = "pipaber/resume") %>% 
@@ -139,7 +139,7 @@ CV %<>% print_section('professional_experience')
 CV %<>% print_section('education')
 ```
 
-\pagebreak
+
 
 ::: aside
 Selected activities:
