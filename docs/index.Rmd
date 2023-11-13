@@ -21,15 +21,8 @@ meta() %>%
     description = paste(
       "CV made with the packages RMarkdown, pagedown, datadrivencv."
     ),
-    url = "https://beatrizmilz.github.io/resume/index.html",
-    image = "https://beatrizmilz.github.io/resume/img/share-card.png",
-    image_alt = paste(
-      "Beatriz Milz CV"
-    ),
     og_type = "website",
-    og_author = "Piero Palacios Bernuy",
-    twitter_card_type = "summary_large_image",
-    twitter_creator = "@beamilz"
+    og_author = "Piero Palacios Bernuy"
   )
 ```
 

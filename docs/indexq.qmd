@@ -1,0 +1,48 @@
+---
+title: "Piero Palacios Bernuy"
+author: Piero Palacios Bernuy
+date: today
+format: 
+  html: 
+    self-contained: true
+    smooth-scroll: true
+editor: visual
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis',
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+library(tidyverse)
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/15kB1Sj6ZN0YBLmc_O3E5iEEMVsBrkFwMnbZD85EZPQo/edit?usp=sharing"
+)
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+
+
+a <- CV$entries_data
+
+b <- a |>
+  filter(section == 'education')
+
+```
+
+## Education
+
+```{r results='asis'}
+
+c <- paste(b$start_year, b$end_year, sep = "-")
+
+cat(b$title,"\t",c,"\n\n")
+
+cat(b$institution,"\n\n")
+
+cat(b$description_bullets,"\n")
+```
