@@ -104,7 +104,7 @@ I have a [blog](https://bioinformatics-blog.netlify.app/) about bioinformatics a
 
 **Spanish:** Native
 
-**English:** Intermediate
+**English:** B2
 <br>
 
 ## Disclaimer {#disclaimer}
@@ -155,6 +155,8 @@ Selected activities:
 <i class="fab fa-python"></i> `Python`
 
 <i class="fa fa-linux"></i> `Linux`
+
+<i class="fa-solid fa-computer"></i> `Pytorch`
 
 :::
 
